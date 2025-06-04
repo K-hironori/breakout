@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ブロック崩し | Breakout Game</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="game-container">
+        <!-- スタート画面 -->
+        <div id="start-screen" class="screen">
+            <h1>ブロック崩し</h1>
+            <h2>Breakout Game</h2>
+            <button id="start-button">プレイ開始</button>
+            <div class="instructions">
+                <h3>遊び方</h3>
+                <p>PC: ← → キーでパドル移動</p>
+                <p>スマホ: 画面タップまたはスワイプ</p>
+            </div>
+        </div>
+
+        <!-- ゲーム画面 -->
+        <div id="game-screen" class="screen hidden">
+            <div class="game-info">
+                <div class="score">スコア: <span id="score">0</span></div>
+                <div class="lives">ライフ: <span id="lives">3</span></div>
+            </div>
+            <canvas id="gameCanvas"></canvas>
+        </div>
+
+        <!-- ゲームオーバー画面 -->
+        <div id="game-over-screen" class="screen hidden">
+            <h2>ゲームオーバー</h2>
+            <div class="final-score">最終スコア: <span id="final-score">0</span></div>
+            <button id="retry-button">もう一度挑戦</button>
+        </div>
+
+        <!-- クリア画面 -->
+        <div id="clear-screen" class="screen hidden">
+            <h2>ステージクリア！</h2>
+            <div class="final-score">最終スコア: <span id="clear-score">0</span></div>
+            <button id="next-button">次のステージ</button>
+        </div>
+    </div>
+
+    <!-- 効果音 -->
+    <audio id="hit-sound" src="sounds/hit.mp3" preload="auto"></audio>
+    <audio id="life-lost-sound" src="sounds/life-lost.mp3" preload="auto"></audio>
+    <audio id="game-over-sound" src="sounds/game-over.mp3" preload="auto"></audio>
+    <audio id="stage-clear-sound" src="sounds/stage-clear.mp3" preload="auto"></audio>
+
+    <!-- JavaScript モジュール -->
+    <script type="module" src="js/main.js"></script>
+
+    <!-- MIT License -->
+    <!--
+    Copyright (c) 2025 Hiroki Emueshi
+
+    Permission is hereby granted, free of charge, to any person obtaining a copy
+    of this software and associated documentation files (the "Software"), to deal
+    in the Software without restriction, including without limitation the rights
+    to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+    copies of the Software, and to permit persons to whom the Software is
+    furnished to do so, subject to the following conditions:
+
+    The above copyright notice and this permission notice shall be included in all
+    copies or substantial portions of the Software.
+
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+    SOFTWARE.
+    -->
+</body>
+</html>
